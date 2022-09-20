@@ -1,0 +1,22 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+      <py-env>
+        - numpy
+        - matplotlib
+        - requests
+      </py-env>
+    </head>
+
+  <body>
+    <h1>Let's plot random numbers</h1>
+    <div id="plot"></div>
+    <py-script>
+        from random import randint
+
+
+        pyscript.write('plot', '      '+str(randint(10, 100)))
+    </py-script>
+  </body>
+</html>

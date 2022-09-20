@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, marshmallow</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+  <h1>Повторяющееся действие</h1>
+  <py-script>
+      from datetime import datetime
+      import asyncio
+
+      async def foo():
+        while True:
+            await asyncio.sleep(1)
+            output = datetime.now().strftime('%c')
+            pyscript.write('mytime', output)
+
+      pyscript.run_until_complete(foo())
+  </py-script>
+  <p>Меняющееся надпись: <em id="mytime"></em></p>
+</body>
+</html>
